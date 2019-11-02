@@ -1,6 +1,7 @@
 <?php
 
 use App\Chanel;
+use App\Post;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         factory(Chanel::class,20)->create();
+        factory(Post::class,20)->create();
+
         // $this->call(UsersTableSeeder::class);
     }
 }
