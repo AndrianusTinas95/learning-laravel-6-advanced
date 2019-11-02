@@ -3,3 +3,4 @@ from Coder's Tape in playlist Laravel 6 Advanced
 02. Laravel 6 Advanced - e2 - View Composers
 03. Laravel 6 Advanced - e3 - Polymorphic Relationships
 04. Laravel 6 Advanced - e4 - Facades
+05. Laravel 6 Advanced - e5 - Macros

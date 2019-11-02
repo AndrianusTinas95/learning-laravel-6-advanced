@@ -13,8 +13,13 @@
 
 use App\Services\PostCard;
 use App\Services\PostCardSendingService;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Str;
 
 Route::get('/', function () {
+    // return Response::errorJson('error code boom');
+    dd(Str::partNumber('8675757'));
+    // dd(Str::prefix('8675757','ABCD-'));
     return view('welcome');
 });
 

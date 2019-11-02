@@ -7,10 +7,13 @@ use App\Billing\CreditPaymentGateway;
 use App\Billing\PayMentGatewayContract;
 use App\Chanel;
 use App\Http\View\Composers\ChanelComposer;
+use App\Mixins\StrMixin;
 use App\Services\PostCardSendingService;
+use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -57,5 +60,18 @@ class AppServiceProvider extends ServiceProvider
         // option 3 -  
         // View::composer(['chanel.*','post.create'],ChanelComposer::class);
         View::composer('partials.chanels.*',ChanelComposer::class);
+
+        Str::macro('partNumber',function($part){
+            return 'AB-' . substr($part,0,3) .'-' . substr($part,3);
+        });
+        // Str::mixin(new StrMixin);
+        Str::mixin(new StrMixin,false);
+
+        ResponseFactory::macro('errorJson',function($message =' Default Message'){
+            return [
+                'message'       => $message,
+                'error_code'    => 123
+            ];
+        });
     }
 }
