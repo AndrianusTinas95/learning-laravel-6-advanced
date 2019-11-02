@@ -7,6 +7,7 @@ use App\Billing\CreditPaymentGateway;
 use App\Billing\PayMentGatewayContract;
 use App\Chanel;
 use App\Http\View\Composers\ChanelComposer;
+use App\Services\PostCardSendingService;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -29,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
                 return new CreditPaymentGateway('usd');
             }
             return new BankPaymentGateway('usd');
+        });
+
+        $this->app->singleton('PostCard',function(){
+            return new PostCardSendingService('id',4,6); 
         });
     }
 

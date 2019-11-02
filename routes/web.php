@@ -11,6 +11,9 @@
 |
 */
 
+use App\Services\PostCard;
+use App\Services\PostCardSendingService;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,3 +22,13 @@ Route::get('/pay','PayOrderController@store');
 
 Route::get('chanels','ChanelController@index');
 Route::get('posts/create','PostController@create');
+
+Route::get('/postcard',function(){
+    $postService =new  PostCardSendingService('id',4,6); 
+
+    $postService->hallo('Hallo From Nanas \n Ganas id','test@test.com');
+});
+
+Route::get('/facades',function(){
+     PostCard::hallo('Hallo From Nanas \n Ganas id','test@test.com');
+});
