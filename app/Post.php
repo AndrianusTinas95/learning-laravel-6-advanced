@@ -6,10 +6,13 @@ use App\Http\QueryFilter\MaxCount;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\QueryFilter\Sort;
 use App\Http\QueryFilter\Status;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Pipeline\Pipeline;
 
 class Post extends Model
 {
+    use SoftDeletes;
+    
     protected $fillable = [
         'title', 'body'
     ];

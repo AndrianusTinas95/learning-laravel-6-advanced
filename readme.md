@@ -7,3 +7,4 @@ from Coder's Tape in playlist Laravel 6 Advanced
 06. Laravel 6 Advanced - e6 - Pipelines
 07. Laravel 6 Advanced - e7 - Repository Pattern
 08. Laravel 6 Advanced - e8 - Lazy Collections & PHP Generator
+09. Laravel 6 Advanced - e9 - Soft Deletes
