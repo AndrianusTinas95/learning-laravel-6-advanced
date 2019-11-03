@@ -1,6 +1,7 @@
 <?php
 
 use App\Chanel;
+use App\Customer;
 use App\Post;
 use Illuminate\Database\Seeder;
 
@@ -13,8 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Chanel::class,20)->create();
-        factory(Post::class,20)->create();
+        factory(Chanel::class,10)->create();
+        factory(Post::class,10)->create();
+        factory(Customer::class,100)->create();
 
         // $this->call(UsersTableSeeder::class);
     }

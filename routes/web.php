@@ -38,3 +38,8 @@ Route::get('/postcard',function(){
 Route::get('/facades',function(){
      PostCard::hallo('Hallo From Nanas \n Ganas id','test@test.com');
 });
+
+Route::get('/customers','CustomerController@index');
+Route::get('/customers/{customer}','CustomerController@show');
+Route::get('/customers/{customer}/update','CustomerController@update');
+Route::get('/customers/{customer}/delete','CustomerController@destroy');

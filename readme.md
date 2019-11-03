@@ -5,3 +5,4 @@ from Coder's Tape in playlist Laravel 6 Advanced
 04. Laravel 6 Advanced - e4 - Facades
 05. Laravel 6 Advanced - e5 - Macros
 06. Laravel 6 Advanced - e6 - Pipelines
+07. Laravel 6 Advanced - e7 - Repository Pattern
